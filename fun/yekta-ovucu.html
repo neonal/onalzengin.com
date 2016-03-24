@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var appreciations = [
+            "Olm bu mükemmel bir fikir!",
+            "Ya bu Yekta var ya inanılamaz.",
+            "Adam mükemmel önerilerle geliyor.",
+            "Yekta çok sorumluluk sahibi insan.",
+            "Yekta kesin buna bir şey düşünmüştür."
+        ]
+
+        getAppreciation = function (btn) {
+
+            console.log(this);
+            btn.innerHTML = "Yekta övülüyor...";
+            window.setTimeout(function(){
+                var rand = Math.floor(Math.random() * (appreciations.length))
+                console.log(rand);
+
+                document.getElementById('apprecication-box').innerHTML = appreciations[rand];
+                btn.innerHTML = "Yekta'yı Öv";
+            },1000);
+        }
+    </script>
+    <style type="text/css">
+        #main{
+            position: absolute;
+            top: 30%;
+            margin-top: -150px;
+            left: 50%;
+            margin-left: -250px;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+        }
+
+        .centerButton {
+            padding: 10px;
+        }
+
+        #apprecication-box {
+            margin-bottom: 20px;
+            font-family: sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="apprecication-box">&nbsp;</div>
+    <button onclick="getAppreciation(this)" class="centerButton">Yekta'yı Öv</button>
+</div>
+</body>
+</html>
